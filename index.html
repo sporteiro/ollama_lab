@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ollama-lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ollama-lab</h1>
+        <div class="model-selector">
+            <label for="model">Model:</label>
+            <select id="model"></select>
+            <button id="refresh-models">Refresh</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="chat-area">
+            <div class="system-prompt-box">
+                <label for="system-prompt">System:</label>
+                <textarea id="system-prompt" placeholder="Optional system prompt..."></textarea>
+            </div>
+            <div id="messages" class="messages"></div>
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Type your message..." autofocus>
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+
+        <aside class="metrics">
+            <div class="metric">
+                <h3>Tokens sent</h3>
+                <span class="value" id="metric-sent">0</span>
+            </div>
+            <div class="metric">
+                <h3>Tokens generated</h3>
+                <span class="value" id="metric-gen">0</span>
+            </div>
+            <div class="metric">
+                <h3>Tokens/sec</h3>
+                <span class="value" id="metric-tps">0</span>
+                <span class="unit">tok/s</span>
+            </div>
+            <div class="metric">
+                <h3>Time to first token</h3>
+                <span class="value" id="metric-ttft">0</span>
+                <span class="unit">ms</span>
+            </div>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
